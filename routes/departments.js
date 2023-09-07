@@ -20,7 +20,7 @@ const addDepart = (name) => {
         if(err){
             console.log(err.message);
         }
-        return console.log(res);
+        return console.log('New department has been added!',res);
     })
 }
 
