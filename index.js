@@ -3,6 +3,8 @@ const {viewAll} = require('./routes/employees')
 const {viewRoles} = require('./routes/roles')
 const {viewDepart} = require('./routes/departments')
 const {addEmployee, updateEmployee} = require('./modifier/modEmployee')
+const {addDepartment} = require('./modifier/modDepartment')
+const {newRole} = require('./modifier/modRole')
 
 
 const startQuestion = () => {
@@ -27,28 +29,31 @@ inquirer
     .then((res) => {
         let action = res.action
         if(action === 'View All Employees'){
-            viewAll()
-        }
+            return viewAll()
+       }
         else if(action === 'Add Employee'){
-            addEmployee()
+            return addEmployee()
         }
         else if(action === 'Update Employee Role'){
-            updateEmployee()
+            return updateEmployee()
         }
         else if(action === 'View All Roles'){
-            viewRoles()
+            return viewRoles()
         }
         else if(action === 'Add Role'){
-
+            return newRole()
         }
         else if(action === 'View All Departments'){
-            viewDepart()
+            return viewDepart()
         }
         else if(action === 'Add Departments'){
-    
+            return addDepartment()
         }
-        else{}
-    }) 
+        else{
+            return console.log('Good Bye!');
+        }
+    })
+    
 }
 
 startQuestion()
