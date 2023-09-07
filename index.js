@@ -2,6 +2,7 @@ const inquirer = require('inquirer')
 const {viewAll} = require('./routes/employees')
 const {viewRoles} = require('./routes/roles')
 const {viewDepart} = require('./routes/departments')
+const {addEmployee} = require('./modifier/modEmployee')
 
 
 const startQuestion = () => {
@@ -29,7 +30,7 @@ inquirer
             viewAll()
         }
         else if(action === 'Add Employee'){
-            
+            addEmployee()
         }
         else if(action === 'Update Employee Role'){
 
