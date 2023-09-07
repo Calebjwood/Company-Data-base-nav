@@ -1,5 +1,7 @@
 const inquirer = require('inquirer')
-const {viewAll, addEmp} = require('./routes/employees')
+const {viewAll} = require('./routes/employees')
+const {viewRoles} = require('./routes/roles')
+const {viewDepart} = require('./routes/departments')
 
 
 const startQuestion = () => {
@@ -33,13 +35,13 @@ inquirer
 
         }
         else if(action === 'View All Roles'){
-
+            viewRoles()
         }
         else if(action === 'Add Role'){
 
         }
         else if(action === 'View All Departments'){
-
+            viewDepart()
         }
         else if(action === 'Add Departments'){
 
