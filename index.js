@@ -1,5 +1,5 @@
 const inquirer = require('inquirer')
-
+const {viewAll, addEmp} = require('./routes/employees')
 
 
 const startQuestion = () => {
@@ -10,23 +10,24 @@ inquirer
             name: 'action',
             message: 'What would you like to do?',
             choices: [
-                'View All Employee Role',
+                'View All Employees',
                 'Add Employee',
                 'Update Employee Role',
                 'View All Roles',
                 'Add Role',
                 'View All Departments',
-                'Add Departments'
+                'Add Departments',
+                'quit'
             ]
         }
     ])
     .then((res) => {
         let action = res.action
-        if(action === 'View All Employee Role'){
-            
+        if(action === 'View All Employees'){
+            viewAll()
         }
         else if(action === 'Add Employee'){
-
+            
         }
         else if(action === 'Update Employee Role'){
 
@@ -43,6 +44,7 @@ inquirer
         else if(action === 'Add Departments'){
 
         }
+        else{}
     }) 
 }
 
